@@ -136,7 +136,10 @@ async def on_message(message):
                 message_history[channel_id].append(f"Alice: {generated_response}")
             else:
                 generated_response = "Hmm, parece que não consegui pensar em nada agora."
-            await message.channel.send(generated_response)
+            sent_message = await message.channel.send(generate_response)
+            if "vinho" in generated_response.lower():
+                contar_vinho += generated_response.lower().split().count("vinho")
+                print(f"A alice disse 'vinho' {contar_vinho} vezes")
             if message.guild.voice_client:
                 RespostaFalada = eleven.text_to_speech.convert(
                     text= generated_response,
