@@ -1,46 +1,39 @@
-⚙️ Bot Configurado com:
-
-- ( ex : )discord.pycom prefixo "a "(ex: a comando)
-
-- comandos comUso de comandos slash comclient.tree.sync()
-
-- Permissões amplas viaIntents.all()
-
-🔐 APIs Integradas:
-- Google Gemini ( genai.Client) para IA conversacional
-
-- Laboratórios Eleven para geração de voz ( texto para fala ) .para geração de voz (texto para fala).
-
-- Leitura de tokens usando o arquivo , com a biblioteca .usando o arquivo .env, com a biblioteca dotenv.
-
-🤖 Nome do bot: Alice
-
 # 🤖 Alice - Bot de Discord com IA e TTS
+Alice é uma assistente IA para Discord, equipada com geração de respostas inteligentes e conversão de texto em fala (TTS). Ideal para comunidades que buscam uma interação diferenciada e divertida.
 
-Alice é um bot de Discord desenvolvido em Python que integra:
-- Geração de respostas contextuais com IA (Google Gemini)
-- Conversão de texto em fala (TTS com `pyttsx3`)
-- Interações por comandos e mensagens.
-- Controle de canal autorizado para interação.
+## ⚙️ Bot Configurado com:
+- discord.py com suporte a comandos tradicionais e comandos slash (client.tree.sync()).
 
----
+- Permissões amplas ativadas com Intents.all().
+
+- Prefixo opcional: a (ex: a comando).
+
+## 🔐 APIs Integradas
+- Google Gemini (genai.Client) para IA conversacional.
+
+- Eleven Labs para geração de voz (texto para fala).
+
+- dotenv para leitura de tokens e configurações a partir do arquivo .env.
 
 ## 🚀 Funcionalidades
+- 🧠 Respostas inteligentes com IA (Google Gemini).
 
-- 🧠 **Geração de respostas inteligentes** com base nas mensagens dos usuários usando o modelo Gemini.
-- 🔊 **Leitura das respostas com voz**, utilizando a biblioteca `pyttsx3`.
-- 🎯 **Restrição de comandos e mensagens** a um canal autorizado pelo comando `/configurar`.
-- 🛠️ **Comando de teste** para validar se o bot está operando no canal correto.
-- 🖼️ (Em desenvolvimento) Suporte a **análise de imagens** via URL.
-- 🍷 Contador de quantas vezes a IA menciona a palavra "vinho" — por diversão ou estatística.
+- 🔊 Conversão de texto em fala, utilizando pyttsx3.
 
----
+- 🎯 Canal autorizado: o bot só interage em um canal definido com /configurar.
+
+- 🛠️ Comando de teste para validar o funcionamento.
+
+- 🖼️ (Em construção) Suporte a análise de imagens via URL.
+
+- 🍷 Contador de vinho: acompanha quantas vezes a IA menciona a palavra "vinho".
 
 ## 🧩 Requisitos
-
 - Python 3.9+
-- Um bot de Discord criado via [Discord Developer Portal](https://discord.com/developers/applications)
-- Chave de API do [Google Gemini](https://ai.google.com/)
+
+- Um bot criado no Discord Developer Portal
+
+- Chave de API do Google Gemini
 
 ---
 
@@ -80,6 +73,7 @@ python bot.py
 /configurar
 ```
 Para definir o canal em que o bot poderá interagir com mensagens e comandos.
+
 3. Mande uma mensagem mencionando a Alice:
 ```less
 @Alice O que você acha de vinho?
@@ -91,7 +85,7 @@ A Alice responderá e, se estiver ativado, lerá a resposta em voz alta.
 | Comando       | Descrição                                                      |
 |---------------|----------------------------------------------------------------|
 | `/configurar` | Define o canal atual como autorizado para interações.         |
-| `/teste`      | (Opcional) Comando de exemplo para testar a funcionalidade TTS(texto para fala).        |
+| `/teste`      | Testa o funcionamento do bot e da voz.        |
 
 
 ## 🎙️ Text-to-Speech (TTS)
@@ -108,6 +102,23 @@ def verificar_conteudo_imagem(url_imagem):
 O bot só responde a comandos e mensagens no canal autorizado via /configurar.
 
 Isso evita que Alice interaja fora do contexto desejado ou em canais aleatórios.
+
+## 🧪 Exemplo de uso
+No canal autorizado:
+
+```bash
+@Alice Olá! Você gosta de vinho?
+```
+A Alice irá:
+
+- Gerar uma resposta com IA
+- Falar a resposta (TTS ativo)
+
+Resultado:
+
+```mathematica
+Claro! O vinho é uma bebida com muita história e complexidade. 🍷
+```
 
 ## 📚 Arquitetura
 - on_ready: Notifica que o bot está online.
